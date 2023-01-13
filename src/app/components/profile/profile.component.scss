@@ -64,13 +64,13 @@ $secondary-text-color: #4a5568;
 
     .profile-info {
       display: block;
-    }
-  }
 
-  app-icon {
-    display: inline-block;
-    font-size: 25px;
-    vertical-align: middle;
-    width: 25px;
+      app-icon {
+        display: inline-block;
+        font-size: 25px;
+        vertical-align: middle;
+        width: 30px;
+      }
+    }
   }
 }

@@ -28,12 +28,15 @@ $secondary-text-color: #4a5568;
       }
 
       .title {
-        display: flex;
-        gap: 0.3rem;
         font-family: "Nunito", sans-serif;
         font-weight: 100;
         font-size: 3.2vw;
         margin: 0;
+
+        a {
+          display: flex;
+          gap: 0.3rem;
+        }
 
         @media screen and (min-width: 320px) {
           font-size: 32px;
