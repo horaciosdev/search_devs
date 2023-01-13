@@ -1,0 +1,48 @@
+$secondary-text-color: #4a5568;
+
+.repository {
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1rem;
+  margin-bottom: 15px;
+  padding-right: 15px;
+
+  .repo-head {
+    display: flex;
+    align-items: center;
+    height: 50px;
+
+    .repo-name {
+      font-size: 20px;
+      border-radius: 5px;
+      transition: all 0.3s;
+      &:hover {
+        color: #8c19d2;        
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .repo-body {
+    color: $secondary-text-color;
+
+    .repo-description {
+      line-height: 24px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .repo-footer {
+    display: flex;
+    color: $secondary-text-color;
+    font-size: 14px;
+    align-items: center;
+
+    app-icon {
+      padding: 0 8px;
+    }
+
+    .black-circle {
+      padding: 0 8px;
+    }
+  }
+}

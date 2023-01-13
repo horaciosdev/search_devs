@@ -1,87 +1,51 @@
-<div class="profile">
-  <header>
-    <div class="profile-search">
-      <h1 class="title">
-        <a [routerLink]="['/home']">
-          <span class="title-word-search">Search</span>
-          <span class="title-word-devs">d_devs</span>
-        </a>
-      </h1>
-      <div class="search-bar-container">
-        <div class="search-bar">
-          <span class="material-icons-outlined search-icon">search</span>
-          <input
-            #searchBox
-            type="text"
-            placeholder="Search"
-            (keyup.enter)="search(searchBox.value)"
-          />
+<div class="profile" *ngIf="profile.id; else errorContainer">
+  <div class="profile-head">
+    <img src="{{ profile.avatar_url }}" alt="" class="avatar" />
+
+    <div>
+      <div class="profile-name">{{ profile.name | titlecase }}</div>
+      <div class="profile-nickname">@{{ profile.login }}</div>
+    </div>
+  </div>
+  <div class="profile-body">
+    <div class="profile-bio-container">
+      <p class="profile-bio">{{ profile.bio }}</p>
+
+      <div class="profile-follows">
+        <div class="profile-followers profile-info">
+          <app-icon [iconName]="'group'"></app-icon>
+          {{ profile.followers }} seguidores
+        </div>
+        <div class="profile-following profile-info">
+          <app-icon [iconName]="'heart'"></app-icon>
+          <span>{{ profile.following }} seguindo</span>
         </div>
       </div>
     </div>
-  </header>
 
-  <div class="profile-container">
-    <aside>
-      <div class="aside-head">
-        <div class="person">
-          <img src="{{ profile.avatar_url }}" alt="" class="avatar" />
-        </div>
-        <div>
-          <div class="profile-name">{{ profile.name | titlecase }}</div>
-          <div class="profile-nickname">@{{ profile.login }}</div>
-        </div>
-      </div>
-      <div class="aside-body">
-        <div class="profile-bio">{{ profile.bio }}</div>
-
-        <div class="profile-followers">
-          <span class="material-symbols-outlined"> groups </span>
-          {{ profile.followers }} seguidores
-        </div>
-        <div class="profile-following">
-          <span class="material-icons-outlined">favorite_outline</span>
-          {{ profile.followers }} seguindo
-        </div>
-
-        <div class="profile-company">
-          <span class="material-icons-outlined">corporate_fare_outline</span>
-          {{ profile.company }}
-        </div>
-        <div class="profile-location">
-          <span class="material-symbols-outlined"> location_on </span>
-          {{ profile.location }}
-        </div>
-        <div class="profile-email">
-          <span class="material-icons-outlined">mail_outline</span>
-          {{ profile.email }}
-        </div>
-        <div class="profile-blog">
-          <span class="material-icons-outlined">link_outline</span>
-          {{ profile.blog }}
-        </div>
-        <div class="profile-twitter_username">
-          <span class="material-icons-outlined">link_outline</span>
-          @{{ profile.twitter_username }}
-        </div>
-      </div>
-
-      <button>Contato</button>
-    </aside>
-
-    <main>
-      <div class="repository" *ngFor="let repo of repos">
-        <h1 class="repo-name">{{ repo.name }}</h1>
-        <p class="repo-description">{{ repo.description }}</p>
-        <div class="repo-stars">
-          <span class="material-icons-outlined">star_outline</span
-          >{{ repo.stargazers_count }}
-        </div>
-        <div class="updated-at">Atualizado há {{ repo.updated_at }} dias</div>
-      </div>
-      <h2>Main</h2>
-      <!-- <div>{{ profile | json }}</div> -->
-      <!-- <div>{{ repos | json }}</div> -->
-    </main>
+    <div class="profile-company profile-info">
+      <app-icon [iconName]="'company'"></app-icon>
+      <span>{{ profile.company }}</span>
+    </div>
+    <div class="profile-location profile-info">
+      <app-icon [iconName]="'location'"></app-icon>
+      <span>{{ profile.location }}</span>
+    </div>
+    <div class="profile-email profile-info">
+      <app-icon [iconName]="'email'"></app-icon>
+      <span>{{ profile.email }}</span>
+    </div>
+    <div class="profile-blog profile-info">
+      <app-icon [iconName]="'link'"></app-icon>
+      <span>{{ profile.blog }}</span>
+    </div>
+    <div class="profile-twitter_username profile-info">
+      <app-icon [iconName]="'twitter'"></app-icon>
+      <span>@{{ profile.twitter_username }}</span>
+    </div>
   </div>
 </div>
+
+<ng-template #errorContainer>
+  {{ errorMessage }}
+</ng-template>

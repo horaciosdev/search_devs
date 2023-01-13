@@ -9,17 +9,28 @@ export class ProfileService {
   constructor(private httpClient: HttpClient) {}
 
   getGitHubProfile(term: string): Observable<any> {
-    //const url = `https://api.github.com/users/${term}`;
-    //return this.httpClient.get<any>(url);
-    return of(profile);
+    if (term == 'abcde') {
+      return of(profile);
+    }
+    return of(not_found_profile);
+    // const url = `https://api.github.com/users/${term}`;
+    // return this.httpClient.get<any>(url);
   }
 
   getGitHubRepos(term: string): Observable<any> {
-    //const url = `https://api.github.com/users/${term}/repos`;
-    //return this.httpClient.get<any>(url);
-    return of(repos);
+    if (term == 'abcde') {
+      return of(repos);
+    }
+    return of(not_found_repos);
+    // const url = `https://api.github.com/users/${term}/repos`;
+    // return this.httpClient.get<any>(url);
   }
 }
+
+const not_found_profile = {
+  message: 'Not Found',
+  documentation_url: 'https://docs.github.com/rest/reference/users#get-a-user',
+};
 
 const profile = {
   login: 'octocat',
@@ -56,7 +67,13 @@ const profile = {
   updated_at: '2008-01-14T04:33:35Z',
 };
 
-const repos: any = [
+const not_found_repos = {
+  message: 'Not Found',
+  documentation_url:
+    'https://docs.github.com/rest/reference/repos#list-repositories-for-a-user',
+};
+
+const repos = [
   {
     id: 573981916,
     node_id: 'R_kgDOIjZE3A',
@@ -909,7 +926,8 @@ const repos: any = [
       site_admin: false,
     },
     html_url: 'https://github.com/horaciosdev/hor4cles',
-    description: 'Config files for my GitHub profile.',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.',
     fork: false,
     url: 'https://api.github.com/repos/horaciosdev/hor4cles',
     forks_url: 'https://api.github.com/repos/horaciosdev/hor4cles/forks',
@@ -1042,7 +1060,8 @@ const repos: any = [
       site_admin: false,
     },
     html_url: 'https://github.com/horaciosdev/search_devs',
-    description: 'An app to search github devs.',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.',
     fork: false,
     url: 'https://api.github.com/repos/horaciosdev/search_devs',
     forks_url: 'https://api.github.com/repos/horaciosdev/search_devs/forks',

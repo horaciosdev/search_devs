@@ -10,6 +10,6 @@ export class HomeComponent {
   constructor(private router: Router) {}
 
   search(term: string): void {
-    this.router.navigate(['/profile', term]);
+    this.router.navigate(['/perfil', term]);
   }
 }

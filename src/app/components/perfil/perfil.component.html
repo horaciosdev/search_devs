@@ -1,0 +1,33 @@
+<div class="perfil">
+  <header>
+    <div class="profile-search">
+      <h1 class="title">
+        <a [routerLink]="['/home']">
+          <span class="title-word-search">Search</span>
+          <span class="title-word-devs">d_devs</span>
+        </a>
+      </h1>
+      <div class="search-bar-container">
+        <div class="search-bar">
+          <app-icon [iconName]="'search'" class="search-icon"></app-icon>
+          <input
+            #searchBox
+            type="text"
+            placeholder="Search"
+            (keyup.enter)="search(searchBox.value)"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <aside>
+      <app-profile [term]="term"></app-profile>
+    </aside>
+
+    <div class="repositories">
+      <app-repositories [term]="term"></app-repositories>
+    </div>
+  </main>
+</div>

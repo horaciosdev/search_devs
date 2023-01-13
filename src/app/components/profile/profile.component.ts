@@ -1,8 +1,5 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input } from '@angular/core';
 import { ProfileService } from 'src/app/services/profile.service';
-import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-profile',
@@ -10,40 +7,45 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
+  @Input() term: string = '';
   profile: any = '';
-  repos: any[] = [];
+  errorMessage: string = '';
 
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private profileService: ProfileService
-  ) {}
+  constructor(private profileService: ProfileService) {}
 
   ngOnInit(): void {
-    const term = this.activatedRoute.snapshot.paramMap.get('term');
-    if (term) {
-      this.getProfile(term);
-      this.getRepos(term);
+    if (this.term) {
+      this.getProfile(this.term);
     }
   }
 
-  search(term: string): void {
-    this.router.navigate(['/profile', term]);
-    this.getProfile(term);
-    this.getRepos(term);
+  ngOnChanges(): void {
+    this.getProfile(this.term);
   }
 
   getProfile(term: string): void {
-    this.profileService.getGitHubProfile(term).subscribe((data) => {
-      this.profile = data;
-    });
-  }
-
-  getRepos(term: string): void {
-    this.profileService.getGitHubRepos(term).subscribe((data) => {
-      this.repos = data.sort(
-        (a: any, b: any) => b.stargazers_count - a.stargazers_count
-      );
-    });
+    this.profileService.getGitHubProfile(term).subscribe(
+      (data) => {
+        if (data.id) {
+          this.profile = data;
+        } else {
+          if (data.message) {
+            switch (data.message) {
+              case 'Not Found':
+                this.errorMessage = 'Perfil não encontrado.';
+                break;
+              default:
+                this.errorMessage = data.message;
+            }
+          }
+        }
+      },
+      (error) => {
+        console.log(error);
+        if (error.message) {
+          this.errorMessage = error.message;
+        }
+      }
+    );
   }
 }

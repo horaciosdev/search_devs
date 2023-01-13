@@ -1,37 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
-@import "material-icons/iconfont/material-icons.css";
-
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 html,
 body {
   height: 100%;
-  margin: 0;
-  padding: 0;
   font-family: "Inter", sans-serif;
 }
 
 a {
-  &:link {
-    text-decoration: none;
-  }
-
-  &:visited {
-    text-decoration: none;
-  }
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  &:active {
-    text-decoration: none;
-  }
+  all: unset;
+  cursor: pointer;
 }
 
 html,
@@ -41,4 +26,5 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #171923;
 }

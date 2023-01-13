@@ -6,7 +6,7 @@
     </h1>
     <div class="search-bar-container">
       <div class="search-bar">
-        <span class="material-icons-outlined search-icon">search</span>
+        <app-icon [iconName]="'search'" class="search-icon"></app-icon>
         <input #searchBox type="text" placeholder="Search" />
       </div>
       <button class="search-button" (click)="search(searchBox.value)">
