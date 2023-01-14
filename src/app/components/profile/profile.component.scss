@@ -1,97 +1,92 @@
 @import "src/styles/variables/colors";
 @import "src/styles/variables/typography";
 
-.profile {
-  .profile-head {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+.profile-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 
-    .avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-
-    .profile-name {
-      font-weight: bold;
-      font-size: 20px;
-    }
-    .profile-nickname {
-      color: $tertiary-text-color;
-      font-size: 14px;
-    }
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 10px;
   }
 
-  .profile-body {
-    color: $secondary-text-color;
+  .profile-name {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .profile-nickname {
+    color: $tertiary-text-color;
     font-size: 14px;
-    line-height: 21px;
+  }
+}
 
-    @media screen and (max-width: 850px) {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      gap: 10px;
-      justify-content: center;
+.profile-body {
+  color: $secondary-text-color;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.profile-following {
+  margin-bottom: 15px;
+}
+
+.profile-bio {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+
+.profile-info {
+  display: block;
+
+  app-icon {
+    display: inline-block;
+    font-size: 25px;
+    vertical-align: middle;
+    width: 30px;
+  }
+
+  a {
+    transition: all 0.3s;
+    :hover {
+      color: $secondary-theme-color;
+      text-decoration: underline;
     }
+  }
+}
 
-    .profile-bio-container {
-      @media screen and (max-width: 850px) {
-        display: flex;
-        flex-direction: column-reverse;
-      }
+@media screen and (max-width: 850px) {
+  .profile-body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
 
-      .profile-follows {
-        @media screen and (max-width: 850px) {
-          display: flex;
-          gap: 15px;
-          margin-bottom: 15px;
-        }
-      }
+  .profile-vcard {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+  }
 
-      .profile-following {
-        margin-bottom: 15px;
-        @media screen and (max-width: 850px) {
-          margin-bottom: 0;
-        }
-      }
-    }
+  .profile-bio-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 
-    .profile-vcard {
-      @media screen and (max-width: 850px) {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        gap: 10px;
-        justify-content: center;
-      }
-    }
+  .profile-follows {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
 
-    .profile-bio {
-      font-size: 16px;
-      line-height: 24px;
-      margin-bottom: 15px;
-    }
-
-    .profile-info {
-      display: block;
-
-      app-icon {
-        display: inline-block;
-        font-size: 25px;
-        vertical-align: middle;
-        width: 30px;
-      }
-
-      a {
-        transition: all 0.3s;
-        :hover {
-          color: $secondary-theme-color;
-          text-decoration: underline;
-        }
-      }
-    }
+  .profile-following {
+    margin-bottom: 0;
   }
 }
