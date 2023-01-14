@@ -38,22 +38,22 @@ export class RepositoriesComponent {
             this.repos = data.sort(
               (a: any, b: any) => b.stargazers_count - a.stargazers_count
             );
-          } else {
-            if (data.message) {
-              switch (data.message) {
-                case 'Not Found':
-                  this.errorMessage = 'Repositórios não encontrados.';
-                  break;
-                default:
-                  this.errorMessage = data.message;
-              }
-            }
           }
         },
         (error) => {
           this.loading = false;
-          if (error.message) {
-            this.errorMessage = error.message;
+          if (error.error.message) {
+            switch (error.error.message) {
+              case 'Not Found':
+                this.errorMessage = 'Repositórios não encontrados.';
+                break;
+              default:
+                this.errorMessage = error.error.message;
+            }
+          } else {
+            if (error.message) {
+              this.errorMessage = error.message;
+            }
           }
         }
       );

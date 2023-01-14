@@ -30,23 +30,21 @@ export class ProfileComponent {
         (data) => {
           this.loading = false;
           this.profile = data;
-          if (this.profile.id) {
-          } else {
-            if (this.profile.message) {
-              switch (data.message) {
-                case 'Not Found':
-                  this.errorMessage = 'Perfil não encontrado.';
-                  break;
-                default:
-                  this.errorMessage = data.message;
-              }
-            }
-          }
         },
         (error) => {
           this.loading = false;
-          if (error.message) {
-            this.errorMessage = error.message;
+          if (error.error.message) {
+            switch (error.error.message) {
+              case 'Not Found':
+                this.errorMessage = 'Perfil não encontrado.';
+                break;
+              default:
+                this.errorMessage = error.error.message;
+            }
+          } else {
+            if (error.message) {
+              this.errorMessage = error.message;
+            }
           }
         }
       );
