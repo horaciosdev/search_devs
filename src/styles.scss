@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-}
+@import "styles/variables/colors";
+@import "styles/variables/typography";
 
 * {
   box-sizing: border-box;
@@ -11,20 +10,11 @@
 html,
 body {
   height: 100%;
-  font-family: "Inter", sans-serif;
+  font-family: $default-font-family;
+  color: $primary-text-color;
 }
 
 a {
   all: unset;
   cursor: pointer;
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  color: #171923;
 }

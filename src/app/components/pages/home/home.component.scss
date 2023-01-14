@@ -1,4 +1,5 @@
-$secondary-text-color: #4a5568;
+@import "src/styles/variables/colors";
+@import "src/styles/variables/typography";
 
 .home {
   display: flex;
@@ -15,83 +16,92 @@ $secondary-text-color: #4a5568;
   padding: 1rem;
   width: 80%;
   max-width: 800px;
-}
 
-.title {
-  font-family: "Nunito", sans-serif;
-  font-weight: 100;
-  font-size: 10vw;
-  margin: 0 0 4vw 0;
-}
+  .logo {
+    font-family: $logo-font-family;
+    font-weight: 100;
+    font-size: 10vw;
+    margin: 0 0 4vw 0;
 
-.title-word-search {
-  color: #0069ca;
-}
-.title-word-devs {
-  color: #8c19d2;
+    .logo-word-search {
+      color: $primary-theme-color;
+    }
+    .logo-word-devs {
+      color: $secondary-theme-color;
+    }
+  }
 }
 
 .search-bar-container {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-}
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  box-shadow: 0px 0px 2px 0px #ccc;
-  border-radius: 6px;
-  padding: 10px;
-  margin-right: 10px;
-  width: 80%;
-  height: 48px;
-}
+  .search-bar {
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 2px 0px $box-shadow-color;
+    border-radius: 6px;
+    padding: 10px;
+    margin-right: 10px;
+    width: 80%;
+    height: 48px;
 
-.search-icon {
-  color: #a0aec0;
-  margin-right: 10px;
-}
+    .search-icon {
+      color: $tertiary-text-color;
+      margin-right: 10px;
+    }
 
-.search-bar input {
-  border: none;
-  outline: none;
-  color: $secondary-text-color;
-  background-color: transparent;
-  font-size: 16px;
-  width: 100%;
-}
+    input {
+      border: none;
+      outline: none;
+      color: $secondary-text-color;
+      background-color: transparent;
+      font-size: 16px;
+      width: 100%;
+    }
+  }
 
-.search-button {
-  width: 176px;
-  height: 48px;
-  background-color: #8c19d2;
-  color: white;
-  border: none;
-  padding: 5px;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
+  .search-button {
+    width: 176px;
+    height: 48px;
+    background-color: $button-background-color;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
 
-.search-button:hover {
-  background-color: #0069ca;
-}
+  .search-button:hover {
+    background-color: $button-background-hover-color;
+  }
 
-.search-button:active {
-  background-color: #0069ca;
-}
+  .search-button:active {
+    background-color: $button-background-hover-color;
+  }
 
-.search-bar input::placeholder {
-  color: #8c8c8c;
+  .search-bar input::placeholder {
+    color: $placeholder-color;
+  }
 }
 
 @media screen and (min-width: 800px) {
-  .title {
-    font-size: 80px;
-    margin: 0 0 60px 0;
+  .home-search {
+    .logo {
+      font-size: 80px;
+      margin: 0 0 60px 0;
+    }
+  }
+}
+@media screen and (max-width: 300px) {
+  .home-search {
+    .logo {
+      font-size: 30px;
+    }
   }
 }
 
@@ -99,15 +109,10 @@ $secondary-text-color: #4a5568;
   .search-bar-container {
     flex-wrap: wrap;
     gap: 20px;
-  }
-  .search-bar {
-    margin: 0;
-    width: 100%;
-  }
-}
 
-@media screen and (max-width: 300px) {
-  .title {
-    font-size: 30px;
+    .search-bar {
+      margin: 0;
+      width: 100%;
+    }
   }
 }
