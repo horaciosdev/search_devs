@@ -28,7 +28,8 @@ export class RepositoriesComponent {
   getRepos(term: string): void {
     this.profileService.getGitHubRepos(term).subscribe(
       (data) => {
-        if (data.length) {
+        this.repos = data;
+        if (this.repos.length) {
           this.repos = data.sort(
             (a: any, b: any) => b.stargazers_count - a.stargazers_count
           );

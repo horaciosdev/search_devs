@@ -26,10 +26,10 @@ export class ProfileComponent {
   getProfile(term: string): void {
     this.profileService.getGitHubProfile(term).subscribe(
       (data) => {
-        if (data.id) {
-          this.profile = data;
+        this.profile = data;
+        if (this.profile.id) {
         } else {
-          if (data.message) {
+          if (this.profile.message) {
             switch (data.message) {
               case 'Not Found':
                 this.errorMessage = 'Perfil não encontrado.';
