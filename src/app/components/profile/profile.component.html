@@ -32,14 +32,14 @@
       <span>{{ profile.location }}</span>
     </div>
     <div *ngIf="profile.email" class="profile-email profile-info">
+      <app-icon [iconName]="'email'"></app-icon>
       <a href="mailto:{{ profile.email }}">
-        <app-icon [iconName]="'email'"></app-icon>
         <span>{{ profile.email }}</span>
       </a>
     </div>
     <div *ngIf="profile.blog" class="profile-blog profile-info">
+      <app-icon [iconName]="'link'"></app-icon>
       <a href="http://{{ profile.blog }}" target="_blank">
-        <app-icon [iconName]="'link'"></app-icon>
         <span>{{ profile.blog }}</span>
       </a>
     </div>
@@ -47,11 +47,11 @@
       *ngIf="profile.twitter_username"
       class="profile-twitter_username profile-info"
     >
+      <app-icon [iconName]="'twitter'"></app-icon>
       <a
         href="https://twitter.com/{{ profile.twitter_username }}"
         target="_blank"
       >
-        <app-icon [iconName]="'twitter'"></app-icon>
         <span>@{{ profile.twitter_username }}</span>
       </a>
     </div>
