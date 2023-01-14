@@ -13,12 +13,6 @@ export class ProfileComponent {
 
   constructor(private profileService: ProfileService) {}
 
-  ngOnInit(): void {
-    if (this.term) {
-      this.getProfile(this.term);
-    }
-  }
-
   ngOnChanges(): void {
     this.getProfile(this.term);
   }

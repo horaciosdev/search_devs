@@ -17,10 +17,6 @@ export class RepositoriesComponent {
     private dateCalculatorService: DateCalculatorService
   ) {}
 
-  ngOnInit(): void {
-    this.getRepos(this.term);
-  }
-
   ngOnChanges(): void {
     this.getRepos(this.term);
   }
