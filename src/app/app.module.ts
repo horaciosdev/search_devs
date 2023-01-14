@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RepositoriesComponent } from './components/repositories/repositories.component';
 import { PerfilComponent } from './components/pages/perfil/perfil.component';
 import { IconComponent } from './components/icon/icon.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { IconComponent } from './components/icon/icon.component';
     RepositoriesComponent,
     PerfilComponent,
     IconComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

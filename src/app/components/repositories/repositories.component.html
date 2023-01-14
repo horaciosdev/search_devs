@@ -1,29 +1,35 @@
-<div *ngIf="repos.length; else errorContainer">
-  <div class="repository" *ngFor="let repo of repos">
-    <div class="repo-head">
-      <a href="{{ repo.html_url }}" target="_blank">
-        <h1 class="repo-name">
-          {{ repo.name }}
-        </h1>
-      </a>
-    </div>
+<div *ngIf="loading; else loaded">
+  <app-loader></app-loader>
+</div>
+<ng-template #loaded>
+  <div *ngIf="repos.length; else errorContainer">
+    <div class="repository" *ngFor="let repo of repos">
+      <div class="repo-head">
+        <a href="{{ repo.html_url }}" target="_blank">
+          <h1 class="repo-name">
+            {{ repo.name }}
+          </h1>
+        </a>
+      </div>
 
-    <div class="repo-body">
-      <p class="repo-description">{{ repo.description }}</p>
-    </div>
+      <div class="repo-body">
+        <p class="repo-description">{{ repo.description }}</p>
+      </div>
 
-    <div class="repo-footer">
-      <app-icon [iconName]="'star'"></app-icon>
-      <span>{{ repo.stargazers_count }}</span>
-      <span class="black-circle">&#9679;</span>
-      <div class="updated-at">
-        Atualizado há {{ calculateDateDiff(repo.updated_at) }} dias
+      <div class="repo-footer">
+        <app-icon [iconName]="'star'"></app-icon>
+        <span>{{ repo.stargazers_count }}</span>
+        <span class="black-circle">&#9679;</span>
+        <div class="updated-at">
+          Atualizado há {{ calculateDateDiff(repo.updated_at) }} dias
+        </div>
       </div>
     </div>
   </div>
-</div>
+</ng-template>
 <ng-template #errorContainer>
-  <main>
-    {{ errorMessage }}
-  </main>
+  <div class="error-container">
+    <app-icon [iconName]="'notfound'" class="error-icon"></app-icon>
+    <p>{{ errorMessage }}</p>
+  </div>
 </ng-template>

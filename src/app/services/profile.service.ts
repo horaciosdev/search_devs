@@ -12,18 +12,18 @@ export class ProfileService {
     if (term == 'abcde') {
       return of(profile);
     }
-    return of(not_found_profile);
-    // const url = `https://api.github.com/users/${term}`;
-    // return this.httpClient.get<any>(url);
+    //return of(not_found_profile);
+    const url = `https://api.githubs.com/users/${term}`;
+    return this.httpClient.get<any>(url);
   }
 
   getGitHubRepos(term: string): Observable<any> {
     if (term == 'abcde') {
       return of(repos);
     }
-    return of(not_found_repos);
-    // const url = `https://api.github.com/users/${term}/repos`;
-    // return this.httpClient.get<any>(url);
+    //return of(not_found_repos);
+    const url = `https://api.githubs.com/users/${term}/repos`;
+    return this.httpClient.get<any>(url);
   }
 }
 

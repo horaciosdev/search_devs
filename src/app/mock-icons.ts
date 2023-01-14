@@ -3,7 +3,7 @@ import { Icon } from './interfaces/icon';
 export const ICONS: Icon[] = [
   {
     name: 'default',
-    svg: `<svg  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M2 16h1v1h-1v-1zM10 17h1v-1h-1v1zM12 17h1v-1h-1v1zM4 17h1v-1h-1v1zM6 17h1v-1h-1v1zM8 17h1v-1h-1v1zM14 17h1v-1h-1v1zM14 3h1v-1h-1v1zM14 5h1v-1h-1v1zM14 13h1v-1h-1v1zM14 7h1v-1h-1v1zM14 9h1v-1h-1v1zM14 15h1v-1h-1v1zM14 11h1v-1h-1v1zM14 0v1h1v-1h-1zM12 1h1v-1h-1v1zM6 1h1v-1h-1v1zM8 1h1v-1h-1v1zM10 1h1v-1h-1v1zM4 1h1v-1h-1v1zM2 1h1v-1h-1v1zM2 13h1v-1h-1v1zM2 15h1v-1h-1v1zM2 11h1v-1h-1v1zM2 3h1v-1h-1v1zM2 5h1v-1h-1v1zM2 7h1v-1h-1v1zM2 9h1v-1h-1v1z" />
           </svg>`,
   },
@@ -24,7 +24,7 @@ export const ICONS: Icon[] = [
   },
   {
     name: 'heart',
-    svg: `<svg  width="24" height="24" viewBox="0 0 24 24" fill="none" 
+    svg: `<svg viewBox="0 0 24 24" fill="none" 
           stroke="currentColor"    
           height="1em"
           width="1em"    
@@ -34,7 +34,7 @@ export const ICONS: Icon[] = [
   },
   {
     name: 'company',
-    svg: `<svg  width="24" height="24" viewBox="0 0 24 24" fill="none" 
+    svg: `<svg viewBox="0 0 24 24" fill="none" 
           stroke="currentColor"    
           height="1em"
           width="1em"    
@@ -49,7 +49,7 @@ export const ICONS: Icon[] = [
   },
   {
     name: 'location',
-    svg: `<svg  width="24" height="24" viewBox="0 0 24 24" fill="none" 
+    svg: `<svg viewBox="0 0 24 24" fill="none" 
           stroke="currentColor"    
           height="1em"
           width="1em"    
@@ -60,7 +60,7 @@ export const ICONS: Icon[] = [
   },
   {
     name: 'email',
-    svg: `<svg  width="24" height="24" viewBox="0 0 24 24" fill="none" 
+    svg: `<svg viewBox="0 0 24 24" fill="none" 
           stroke="currentColor"    
           height="1em"
           width="1em"    
@@ -71,7 +71,7 @@ export const ICONS: Icon[] = [
   },
   {
     name: 'link',
-    svg: `<svg  width="24" height="24" viewBox="0 0 24 24" fill="none" 
+    svg: `<svg viewBox="0 0 24 24" fill="none" 
           stroke="currentColor"    
           height="1em"
           width="1em"    
@@ -82,7 +82,7 @@ export const ICONS: Icon[] = [
   },
   {
     name: 'twitter',
-    svg: `<svg  width="24" height="24" viewBox="0 0 24 24" 
+    svg: `<svg viewBox="0 0 24 24" 
           fill="none" 
           stroke="currentColor"    
           height="1em"
@@ -93,7 +93,7 @@ export const ICONS: Icon[] = [
   },
   {
     name: 'star',
-    svg: `<svg  width="24" height="24" viewBox="0 0 24 24" fill="none" 
+    svg: `<svg viewBox="0 0 24 24" fill="none" 
           stroke="currentColor"    
           height="1em"
           width="1em"    
@@ -103,12 +103,22 @@ export const ICONS: Icon[] = [
   },
   {
     name: 'search',
-    svg: `<svg  width="24" height="24" viewBox="0 0 24 24" fill="none" 
+    svg: `<svg viewBox="0 0 24 24" fill="none" 
           stroke="currentColor"    
           height="1em"
           width="1em"    
           xmlns="http://www.w3.org/2000/svg">
           <path d="m 10.982422,2.9746094 a 8.0087214,8.0087214 0 0 0 -8.0078126,8.0078126 8.0087214,8.0087214 0 0 0 8.0078126,8.009766 8.0087214,8.0087214 0 0 0 5.564453,-2.251954 l 4.408203,4.408204 0.19336,-0.19336 -4.408204,-4.408203 a 8.0087214,8.0087214 0 0 0 2.251954,-5.564453 8.0087214,8.0087214 0 0 0 -8.009766,-8.0078126 z" />
+          </svg>`,
+  },
+  {
+    name: 'notfound',
+    svg: `<svg viewBox="0 0 434 434" fill="currentColor"
+          stroke="currentColor"    
+          height="1em"
+          width="1em"    
+          xmlns="http://www.w3.org/2000/svg">          
+          <path d="M170.666667,-7.10542736e-15 C264.770773,-7.10542736e-15 341.333333,76.56256 341.333333,170.666667 C341.333333,210.04032 327.799467,246.239573 305.3152,275.148373 L426.630187,396.463573 L396.463573,426.630187 L275.148373,305.314987 C246.239573,327.799467 210.04032,341.333333 170.666667,341.333333 C76.56256,341.333333 7.10542736e-15,264.770773 7.10542736e-15,170.666667 C7.10542736e-15,76.56256 76.56256,-7.10542736e-15 170.666667,-7.10542736e-15 Z M170.666667,42.6666667 C100.083413,42.6666667 42.6666667,100.083413 42.6666667,170.666667 C42.6666667,241.24992 100.083413,298.666667 170.666667,298.666667 C241.24992,298.666667 298.666667,241.24992 298.666667,170.666667 C298.666667,100.083413 241.24992,42.6666667 170.666667,42.6666667 Z M170.666667,202.666667 C188.339779,202.666667 202.666667,216.993555 202.666667,234.666667 C202.666667,252.339779 188.339779,266.666667 170.666667,266.666667 C152.993555,266.666667 138.666667,252.339779 138.666667,234.666667 C138.666667,216.993555 152.993555,202.666667 170.666667,202.666667 Z M192,64 L192,170.666667 L149.333333,170.666667 L149.333333,64 L192,64 Z"></path>          
           </svg>`,
   },
 ];

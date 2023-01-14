@@ -1,65 +1,72 @@
-<div class="profile" *ngIf="profile.id; else errorContainer">
-  <div class="profile-head">
-    <img src="{{ profile.avatar_url }}" alt="" class="avatar" />
-
-    <div>
-      <div class="profile-name">{{ profile.name | titlecase }}</div>
-      <div class="profile-nickname">@{{ profile.login }}</div>
-    </div>
-  </div>
-  <div class="profile-body">
-    <div class="profile-bio-container">
-      <p class="profile-bio">{{ profile.bio }}</p>
-
-      <div class="profile-follows">
-        <div class="profile-followers profile-info">
-          <app-icon [iconName]="'group'"></app-icon>
-          <span>{{ profile.followers }} seguidores</span>
-        </div>
-        <div class="profile-following profile-info">
-          <app-icon [iconName]="'heart'"></app-icon>
-          <span>{{ profile.following }} seguindo</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="profile-vcard">
-      <div *ngIf="profile.company" class="profile-company profile-info">
-        <app-icon [iconName]="'company'"></app-icon>
-        <span>{{ profile.company }}</span>
-      </div>
-      <div *ngIf="profile.location" class="profile-location profile-info">
-        <app-icon [iconName]="'location'"></app-icon>
-        <span>{{ profile.location }}</span>
-      </div>
-      <div *ngIf="profile.email" class="profile-email profile-info">
-        <app-icon [iconName]="'email'"></app-icon>
-        <a href="mailto:{{ profile.email }}">
-          <span>{{ profile.email }}</span>
-        </a>
-      </div>
-      <div *ngIf="profile.blog" class="profile-blog profile-info">
-        <app-icon [iconName]="'link'"></app-icon>
-        <a href="http://{{ profile.blog }}" target="_blank">
-          <span>{{ profile.blog }}</span>
-        </a>
-      </div>
-      <div
-        *ngIf="profile.twitter_username"
-        class="profile-twitter_username profile-info"
-      >
-        <app-icon [iconName]="'twitter'"></app-icon>
-        <a
-          href="https://twitter.com/{{ profile.twitter_username }}"
-          target="_blank"
-        >
-          <span>@{{ profile.twitter_username }}</span>
-        </a>
-      </div>
-    </div>
-  </div>
+<div *ngIf="loading; else loaded">
+  <app-loader></app-loader>
 </div>
+<ng-template #loaded>
+  <div class="profile" *ngIf="profile.id; else errorContainer">
+    <div class="profile-head">
+      <img src="{{ profile.avatar_url }}" alt="" class="avatar" />
 
+      <div>
+        <div class="profile-name">{{ profile.name | titlecase }}</div>
+        <div class="profile-nickname">@{{ profile.login }}</div>
+      </div>
+    </div>
+    <div class="profile-body">
+      <div class="profile-bio-container">
+        <p class="profile-bio">{{ profile.bio }}</p>
+
+        <div class="profile-follows">
+          <div class="profile-followers profile-info">
+            <app-icon [iconName]="'group'"></app-icon>
+            <span>{{ profile.followers }} seguidores</span>
+          </div>
+          <div class="profile-following profile-info">
+            <app-icon [iconName]="'heart'"></app-icon>
+            <span>{{ profile.following }} seguindo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-vcard">
+        <div *ngIf="profile.company" class="profile-company profile-info">
+          <app-icon [iconName]="'company'"></app-icon>
+          <span>{{ profile.company }}</span>
+        </div>
+        <div *ngIf="profile.location" class="profile-location profile-info">
+          <app-icon [iconName]="'location'"></app-icon>
+          <span>{{ profile.location }}</span>
+        </div>
+        <div *ngIf="profile.email" class="profile-email profile-info">
+          <app-icon [iconName]="'email'"></app-icon>
+          <a href="mailto:{{ profile.email }}">
+            <span>{{ profile.email }}</span>
+          </a>
+        </div>
+        <div *ngIf="profile.blog" class="profile-blog profile-info">
+          <app-icon [iconName]="'link'"></app-icon>
+          <a href="http://{{ profile.blog }}" target="_blank">
+            <span>{{ profile.blog }}</span>
+          </a>
+        </div>
+        <div
+          *ngIf="profile.twitter_username"
+          class="profile-twitter_username profile-info"
+        >
+          <app-icon [iconName]="'twitter'"></app-icon>
+          <a
+            href="https://twitter.com/{{ profile.twitter_username }}"
+            target="_blank"
+          >
+            <span>@{{ profile.twitter_username }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
 <ng-template #errorContainer>
-  {{ errorMessage }}
+  <div class="error-container">
+    <app-icon [iconName]="'notfound'" class="error-icon"></app-icon>
+    <p>{{ errorMessage }}</p>
+  </div>
 </ng-template>

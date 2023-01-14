@@ -18,3 +18,16 @@ a {
   all: unset;
   cursor: pointer;
 }
+
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: $secondary-text-color;
+
+  .error-icon {
+    font-size: 50px;
+    opacity: 0.3;
+  }
+}
