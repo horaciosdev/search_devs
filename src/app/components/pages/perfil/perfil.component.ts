@@ -18,7 +18,10 @@ export class PerfilComponent {
   }
 
   search(term: string): void {
-    this.router.navigate(['/perfil', term]);
-    this.term = term;
+    this.term = term.trim();
+    if (!this.term) {
+      return;
+    }
+    this.router.navigate(['/perfil', this.term]);
   }
 }

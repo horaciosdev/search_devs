@@ -7,9 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  term: string = '';
+
   constructor(private router: Router) {}
 
   search(term: string): void {
-    this.router.navigate(['/perfil', term]);
+    this.term = term.trim();
+    if (!this.term) {
+      return;
+    }
+    this.router.navigate(['/perfil', this.term]);
   }
 }
