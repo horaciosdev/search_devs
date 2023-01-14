@@ -31,6 +31,7 @@ $secondary-text-color: #4a5568;
     @media screen and (max-width: 850px) {
       display: flex;
       flex-wrap: wrap;
+      flex-direction: column;
       gap: 10px;
       justify-content: center;
     }
@@ -54,6 +55,16 @@ $secondary-text-color: #4a5568;
         @media screen and (max-width: 850px) {
           margin-bottom: 0;
         }
+      }
+    }
+
+    .profile-vcard {
+      @media screen and (max-width: 850px) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
       }
     }
 
