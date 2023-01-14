@@ -14,7 +14,7 @@ $secondary-text-color: #4a5568;
 
   header {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
     .profile-search {
       display: flex;
@@ -59,6 +59,12 @@ $secondary-text-color: #4a5568;
         justify-content: space-evenly;
         width: 100%;
 
+        @media screen and (max-width: 850px) {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
         .search-bar {
           display: flex;
           align-items: center;
@@ -67,6 +73,11 @@ $secondary-text-color: #4a5568;
           padding: 10px;
           width: 100%;
           height: 48px;
+          margin-right: 10px;
+
+          @media screen and (max-width: 850px) {
+            margin: 0;
+          }
 
           .search-icon {
             color: #a0aec0;
@@ -84,6 +95,28 @@ $secondary-text-color: #4a5568;
               color: #8c8c8c;
             }
           }
+        }
+
+        .search-button {
+          width: 176px;
+          height: 48px;
+          background-color: #8c19d2;
+          color: white;
+          border: none;
+          padding: 5px;
+          border-radius: 6px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.2s;
+        }
+
+        .search-button:hover {
+          background-color: #0069ca;
+        }
+
+        .search-button:active {
+          background-color: #0069ca;
         }
       }
     }

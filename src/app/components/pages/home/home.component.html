@@ -7,7 +7,7 @@
     <div class="search-bar-container">
       <div class="search-bar">
         <app-icon [iconName]="'search'" class="search-icon"></app-icon>
-        <input #searchBox type="text" placeholder="Search" />
+        <input #searchBox type="text" placeholder="Search" (keyup.enter)="search(searchBox.value)"/>
       </div>
       <button class="search-button" (click)="search(searchBox.value)">
         Search
