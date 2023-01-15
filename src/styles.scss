@@ -31,3 +31,21 @@ a {
     opacity: 0.3;
   }
 }
+
+button {
+  background-color: $button-background-color;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $button-background-hover-color;
+  }
+  &:active {
+    background-color: $button-background-hover-color;
+  }
+}

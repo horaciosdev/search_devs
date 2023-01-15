@@ -78,23 +78,7 @@ header {
   .search-button {
     width: 176px;
     height: 48px;
-    background-color: $secondary-theme-color;
-    color: white;
-    border: none;
-    padding: 5px;
-    border-radius: 6px;
     font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-
-  .search-button:hover {
-    background-color: $button-background-hover-color;
-  }
-
-  .search-button:active {
-    background-color: $button-background-hover-color;
   }
 }
 

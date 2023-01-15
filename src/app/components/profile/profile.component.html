@@ -60,7 +60,12 @@
             <span>@{{ profile.twitter_username }}</span>
           </a>
         </div>
+
       </div>
+      
+      <button *ngIf="profile.blog" class="contato-button">          
+        <a href="http://{{ profile.blog }}" target="_blank">Contato</a>
+      </button>
     </div>
   </div>
 </ng-template>

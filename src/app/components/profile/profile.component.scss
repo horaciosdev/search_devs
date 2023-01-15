@@ -58,6 +58,17 @@
   }
 }
 
+.profile-vcard {
+  margin-bottom: 50px;
+}
+
+.contato-button {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 @media screen and (max-width: 850px) {
   .profile-body {
     display: flex;
@@ -73,6 +84,7 @@
     flex-direction: row;
     gap: 10px;
     justify-content: center;
+    margin-bottom: 50px;
   }
 
   .profile-bio-container {
