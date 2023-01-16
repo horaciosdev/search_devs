@@ -150,9 +150,8 @@ Modelo da árvore estrutural de arquivos do projeto:
 <div> ┣ 📂assets</div>
 <div> ┃ ┗ 📜.gitkeep</div>
 <div> ┣ 📂styles</div>
-<div> ┃ ┗ 📂variables</div>
-<div> ┃ ┃ ┣ 📜colors.scss</div>
-<div> ┃ ┃ ┗ 📜typography.scss</div>
+<div> ┃ ┗ 📂settings</div>
+<div> ┃ ┃ ┗ 📜_variables.scss</div>
 <div> ┣ 📜favicon.ico</div>
 <div> ┣ 📜index.html</div>
 <div> ┣ 📜main.ts</div>
