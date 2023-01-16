@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "styles/variables/colors";
-@import "styles/variables/typography";
+@import "styles/settings/variables";
 
 * {
   box-sizing: border-box;
@@ -10,8 +9,8 @@
 html,
 body {
   height: 100%;
-  font-family: $default-font-family;
-  color: $primary-text-color;
+  font-family: var(--default-font-family);
+  color: var(--primary-text-color);
 }
 
 a {
@@ -24,7 +23,7 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: $secondary-text-color;
+  color: var(--secondary-text-color);
 
   .error-icon {
     font-size: 50px;
@@ -33,7 +32,7 @@ a {
 }
 
 button {
-  background-color: $button-background-color;
+  background-color: var(--button-background-color);
   color: white;
   border: none;
   padding: 5px;
@@ -43,10 +42,10 @@ button {
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: $button-background-hover-color;
+    background-color: var(--button-background-hover-color);
   }
   &:active {
-    background-color: $button-background-hover-color;
+    background-color: var(--button-background-hover-color);
   }
 }
 
@@ -58,7 +57,7 @@ button {
   .search-bar {
     display: flex;
     align-items: center;
-    box-shadow: 0px 0px 2px 0px $box-shadow-color;
+    box-shadow: 0px 0px 2px 0px var(--box-shadow-color);
     border-radius: 6px;
     padding: 10px;
     margin-right: 10px;
@@ -66,16 +65,16 @@ button {
     height: 48px;
 
     .search-icon {
-      color: $tertiary-text-color;
+      color: var(--tertiary-text-color);
       margin-right: 10px;
     }
 
     &:focus-within {
-      box-shadow: 0 0 4px 0 $secondary-theme-color;
+      box-shadow: 0 0 4px 0 var(--secondary-theme-color);
     }
 
     input {
-      color: $secondary-text-color;
+      color: var(--secondary-text-color);
       border: none;
       outline: none;
       background-color: transparent;
@@ -83,7 +82,7 @@ button {
       width: 100%;
 
       &::placeholder {
-        color: $placeholder-color;
+        color: var(--placeholder-color);
       }
     }
   }
