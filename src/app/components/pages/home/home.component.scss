@@ -1,6 +1,3 @@
-@import "src/styles/variables/colors";
-@import "src/styles/variables/typography";
-
 .home {
   display: flex;
   justify-content: center;
@@ -18,16 +15,16 @@
   max-width: 800px;
 
   .logo {
-    font-family: $logo-font-family;
+    font-family: var(--logo-font-family);
     font-weight: 100;
     font-size: 10vw;
     margin: 0 0 4vw 0;
 
     .logo-word-search {
-      color: $primary-theme-color;
+      color: var(--primary-theme-color);
     }
     .logo-word-devs {
-      color: $secondary-theme-color;
+      color: var(--secondary-theme-color);
     }
   }
 }
